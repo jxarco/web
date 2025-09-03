@@ -1,0 +1,49 @@
+[
+    {
+        "name": "EON: The Last Trial",
+        "type": "game",
+        "description": "Alien Souls-like, C++/Dx11 Custom Engine",
+        "url": "https://farfetchedworks.itch.io/eon-the-last-trial",
+        "preview": "eon_preview"
+    },
+    {
+        "name": "Rooting Route",
+        "type": "game",
+        "description": "Godot, 2D, 3D, GameJam",
+        "url": "https://pabloselin.itch.io/rooting-route",
+        "preview": "rooting_route_preview"
+    },
+    {
+        "name": "Lockdown Reality",
+        "type": "game",
+        "description": "Unreal Engine, GameJam",
+        "url": "https://h3r.itch.io/lockdown-reality",
+        "preview": "lockdown_preview"
+    },
+    {
+        "name": "MANI",
+        "type": "game",
+        "description": "Unreal Engine, 3D, GameJam, Superliminal",
+        "url": "https://jxarco.itch.io/mani",
+        "preview": "mani_preview"
+    },
+    {
+        "name": "The Time Hallows",
+        "type": "game",
+        "description": "Custom Engine, 2D, Teaching",
+        "url": "https://jxarco.itch.io/the-time-hallows",
+        "preview": "TH_preview"
+    },
+    {
+        "name": "LexGUI.js",
+        "type": "web",
+        "description": "JavaScript UI component library",
+        "url": "https://github.com/jxarco/lexgui.js/"
+    },
+    {
+        "name": "wgpuEngine Web Demo",
+        "type": "web",
+        "description": "Sample web demo of the C++ wgpuEngine",
+        "url": "https://github.com/upf-gti/wgpuEngineSample"
+    }
+]
