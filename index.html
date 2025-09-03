@@ -20,6 +20,15 @@
       @media (min-width: 1560px) {
         .project-list { grid-template-columns:repeat(4, 1fr) }
       }
+      @media screen and (max-width: 992px) {
+        .header-area { flex-direction: column }
+        .header-area p, .header-area h1 { text-align: center }
+        .header-area > div { padding: 1.25rem }
+        .header-area > * { width: 100% !important }
+        .contact-rect { align-items: center }
+        :root, :root body { overflow-y: auto }
+      }
+      .hover\:text-underline:hover { text-decoration: underline }
     </style>
     <link rel="icon" href="images/favicon.png">
     <script type="importmap">

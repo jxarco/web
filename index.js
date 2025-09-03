@@ -64,27 +64,29 @@ const projects = JSON.parse( await requestFile( "projects.json", "text" ) );
 
 // Header
 {
-    const header = LX.makeContainer( [ null, "auto" ], "flex flex-row border-top border-bottom", "", area );
+    const header = LX.makeContainer( [ null, "auto" ], "header-area flex flex-row border-top border-bottom", "", area );
 
     const headerLeft = LX.makeContainer( [ null, "auto" ], "flex flex-col gap-2 px-10 py-8", `
         <p class="fg-secondary" style="max-width:32rem">Software developer.</p>
         <h1 class="">Alex Rodríguez</h1>
-        <p class="text-md leading-normal" style="max-width:48rem"> +8 years as a research and development engineer at Pompeu Fabra
+        <p class="leading-normal fg-secondary" style="max-width:48rem"> +8 years as a research and development engineer at Pompeu Fabra
         University, teaching roles in Computer Graphics and Game Development. Passionate about both coding and
         playing games. I'm eager to bring my skills to new challenges in software development, interactive applications,
         or computer graphics.</p>
     `, header );
 
-    const headerRight = LX.makeContainer( [ null, "auto" ], "flex flex-col gap-2 px-10 py-8 justify-end items-end", `
-    <p class="fg-secondary text-end">
+    const headerRight = LX.makeContainer( [ null, "auto" ], "contact-rect flex flex-col gap-2 px-10 py-8 justify-end items-end", `
+    <p class="fg-primary text-end">
     alexroco.30@gmail.com<br>
     +34 634707943<br>
     08150, Barcelona<br>
     </p>
-    <p class="fg-secondary text-md text-end">
-    <span class="fg-primary">Other links</span><br>
-    <a href="https://jxarco.itch.io/">jxarco.itch.io/</a><br>
-    <a href="https://www.youtube.com/watch?v=FcAQGF1KXts">youtube.com/coding-reel</a><br>
+    <p class="text-md text-end">
+    <span class="fg-tertiary">Other links:</span><br>
+    <a class="fg-secondary decoration-none hover:text-underline" href="https://github.com/jxarco/">github.com/jxarco</a><br>
+    <a class="fg-secondary decoration-none hover:text-underline" href="https://jxarco.itch.io/">jxarco.itch.io</a><br>
+    <a class="fg-secondary decoration-none hover:text-underline" href="https://www.linkedin.com/in/alejandro-roco/">linkedin.com/alejandro-roco</a><br>
+    <a class="fg-secondary decoration-none hover:text-underline" href="https://www.youtube.com/watch?v=FcAQGF1KXts">youtube.com/coding-reel</a><br>
     </p>`, header );
 }
 
