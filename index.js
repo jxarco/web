@@ -64,14 +64,28 @@ const projects = JSON.parse( await requestFile( "projects.json", "text" ) );
 
 // Header
 {
-    const header = LX.makeContainer( [ null, "auto" ], "flex flex-col border-top border-bottom gap-2 px-10 py-8", `
+    const header = LX.makeContainer( [ null, "auto" ], "flex flex-row border-top border-bottom", "", area );
+
+    const headerLeft = LX.makeContainer( [ null, "auto" ], "flex flex-col gap-2 px-10 py-8", `
         <p class="fg-secondary" style="max-width:32rem">Software developer.</p>
-        <h1 class="">Alejandro Rodríguez</h1>
+        <h1 class="">Alex Rodríguez</h1>
         <p class="text-md leading-normal" style="max-width:48rem"> +8 years as a research and development engineer at Pompeu Fabra
         University, teaching roles in Computer Graphics and Game Development. Passionate about both coding and
         playing games. I'm eager to bring my skills to new challenges in software development, interactive applications,
         or computer graphics.</p>
-    `, area );
+    `, header );
+
+    const headerRight = LX.makeContainer( [ null, "auto" ], "flex flex-col gap-2 px-10 py-8 justify-end items-end", `
+    <p class="fg-secondary text-end">
+    alexroco.30@gmail.com<br>
+    +34 634707943<br>
+    08150, Barcelona<br>
+    </p>
+    <p class="fg-secondary text-md text-end">
+    <span class="fg-primary">Other links</span><br>
+    <a href="https://jxarco.itch.io/">jxarco.itch.io/</a><br>
+    <a href="https://www.youtube.com/watch?v=FcAQGF1KXts">youtube.com/coding-reel</a><br>
+    </p>`, header );
 }
 
 // Content
@@ -98,29 +112,30 @@ const projects = JSON.parse( await requestFile( "projects.json", "text" ) );
             const projectDesc = LX.makeContainer( ["100%", "100%"], "flex flex-row rounded-b-lg gap-6 p-4 items-center", `
                 <div class="w-full">
                     <div class="text-lg font-bold"><span style="font-family:var(--global-code-font);">${ project.name }</span></div>
-                    <div class="text-sm font-light fg-secondary"><span style="font-family:var(--global-code-font);">${ project.description ?? "" }</div>
+                    <div class="text-md font-light fg-secondary"><span style="font-family:var(--global-code-font);">${ project.description ?? "" }</div>
+                    <div class="text-sm font-light fg-secondary text-end"><span style="font-family:var(--global-code-font);">${ project.year ?? "" }</div>
                 </div>`, projectItem );
 
             projectItem.addEventListener( "click", ( e ) => {
-                window.open( project.url, "_blank" );
+                if( project.url ) window.open( project.url, "_blank" );
             } );
         }
     }
 
     {
-        const graphicsProjects = LX.makeContainer( [ null, "800px" ], "flex flex-col bg-primary border rounded-lg overflow-scroll" );
+        const graphicsProjects = LX.makeContainer( [ null, "auto" ], "flex flex-col bg-primary border rounded-lg overflow-scroll" );
         tabs.add( "Graphics", graphicsProjects, { selected: true } );
         listProjects( "graphics", graphicsProjects );
     }
 
     {
-        const gameProjects = LX.makeContainer( [ null, "800px" ], "flex flex-col bg-primary border rounded-lg overflow-scroll" );
+        const gameProjects = LX.makeContainer( [ null, "auto" ], "flex flex-col bg-primary border rounded-lg overflow-scroll" );
         tabs.add( "Games", gameProjects, { xselected: true } );
         listProjects( "game", gameProjects );
     }
 
     {
-        const webProjects = LX.makeContainer( [ "auto", "800px" ], "flex flex-col bg-primary border rounded-lg overflow-scroll" );
+        const webProjects = LX.makeContainer( [ "auto", "auto" ], "flex flex-col bg-primary border rounded-lg overflow-scroll" );
         tabs.add( "Web", webProjects );
         listProjects( "web", webProjects );
     }
@@ -131,7 +146,7 @@ const projects = JSON.parse( await requestFile( "projects.json", "text" ) );
     const footer = new LX.Footer( {
         className: "border-top",
         parent: LX.root,
-        columns: [
+        xcolumns: [
             {
                 title: "LexGUI",
                 items: [
@@ -153,10 +168,10 @@ const projects = JSON.parse( await requestFile( "projects.json", "text" ) );
                 ]
             }
         ],
-        credits: `2019-${ new Date().getUTCFullYear() } Alex Rodríguez and contributors. Website source code on GitHub.`,
+        credits: `${ new Date().getUTCFullYear() } Alex Rodríguez. Website source code on GitHub.`,
         socials: [
-            { title: "Github", link: "https://github.com/jxarco/lexgui.js/", icon: "Github" },
-            { title: "Discord", link: "https://discord.gg/vwqVrMZBXv", icon: "Discord" }
+            { title: "Github", link: "https://github.com/jxarco", icon: "Github@solid" },
+            { title: "LinkedIn", link: "https://www.linkedin.com/in/alejandro-roco/", icon: "Linkedin@solid" }
         ]
     } );
 }

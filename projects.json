@@ -1,15 +1,65 @@
 [
     {
+        "name": "Rooms VR",
+        "type": "graphics",
+        "description": "3D SDF based sculpting in VR using wgpuEngine",
+        "year": "2023-Present",
+        "url": "https://github.com/upf-gti/rooms",
+        "preview": "rooms_preview"
+    },
+    {
+        "name": "wgpuEngine",
+        "type": "graphics",
+        "description": "WebGPU Cross-platform C++ Engine",
+        "year": "2023-Present",
+        "url": "https://github.com/upf-gti/wgpuEngine",
+        "preview": "wgpuengine_preview"
+    },
+    {
+        "name": "ShaderHub",
+        "type": "graphics",
+        "description": "Native WebGPU Shadertoy-like using LexGUI.js",
+        "year": "2025-Present",
+        "url": "https://upf-gti.github.io/ShaderHub/",
+        "preview": "shaderhub_preview"
+    },
+    {
+        "name": "HDR4EU",
+        "type": "graphics",
+        "description": "Match real lighting conditions in synthetic scenes",
+        "year": "2019",
+        "url": "https://github.com/upf-gti/HDR4EU",
+        "preview": "hdr_preview"
+    },
+    {
+        "name": "Animics (contributor)",
+        "type": "graphics",
+        "description": "Web, Generation of 3D character animations",
+        "year": "2022",
+        "url": "https://github.com/upf-gti/animics",
+        "preview": "animics_preview"
+    },
+    {
         "name": "EON: The Last Trial",
         "type": "game",
         "description": "Alien Souls-like, C++/Dx11 Custom Engine",
+        "year": "2021",
         "url": "https://farfetchedworks.itch.io/eon-the-last-trial",
         "preview": "eon_preview"
+    },
+    {
+        "name": "Fruitality",
+        "type": "game",
+        "description": "Godot, 2D, GameJam",
+        "year": "2024",
+        "url": "https://jxarco.itch.io/fruitality",
+        "preview": "fruitality_preview"
     },
     {
         "name": "Rooting Route",
         "type": "game",
         "description": "Godot, 2D, 3D, GameJam",
+        "year": "2023",
         "url": "https://pabloselin.itch.io/rooting-route",
         "preview": "rooting_route_preview"
     },
@@ -17,6 +67,7 @@
         "name": "Lockdown Reality",
         "type": "game",
         "description": "Unreal Engine, GameJam",
+        "year": "2021",
         "url": "https://h3r.itch.io/lockdown-reality",
         "preview": "lockdown_preview"
     },
@@ -24,6 +75,7 @@
         "name": "MANI",
         "type": "game",
         "description": "Unreal Engine, 3D, GameJam, Superliminal",
+        "year": "2021",
         "url": "https://jxarco.itch.io/mani",
         "preview": "mani_preview"
     },
@@ -31,19 +83,46 @@
         "name": "The Time Hallows",
         "type": "game",
         "description": "Custom Engine, 2D, Teaching",
+        "year": "2019",
         "url": "https://jxarco.itch.io/the-time-hallows",
         "preview": "TH_preview"
+    },
+    {
+        "name": "Pinturesc",
+        "type": "game",
+        "description": "Web Custom version of Pinturillo",
+        "year": "2020",
+        "preview": "pinturesc_preview"
     },
     {
         "name": "LexGUI.js",
         "type": "web",
         "description": "JavaScript UI component library",
-        "url": "https://github.com/jxarco/lexgui.js/"
+        "year": "2019-Present",
+        "url": "https://github.com/jxarco/lexgui.js/",
+        "preview": "lx_preview"
     },
     {
         "name": "wgpuEngine Web Demo",
         "type": "web",
         "description": "Sample web demo of the C++ wgpuEngine",
-        "url": "https://github.com/upf-gti/wgpuEngineSample"
+        "year": "2025-Present",
+        "url": "https://github.com/upf-gti/wgpuEngineSample",
+        "preview": "engine_web_demo_preview"
+    },
+    {
+        "name": "emscripten-webxr-webgpu",
+        "type": "web",
+        "description": "emscripten-webxr fork to Support WebXR-WebGPU binding",
+        "year": "2025",
+        "url": "https://github.com/upf-gti/emscripten-webxr"
+    },
+    {
+        "name": "FSMGraphEditor",
+        "type": "web",
+        "description": "NodeGraph editor, export FSM's as JSON",
+        "year": "2021",
+        "url": "https://github.com/upf-gti/wgpuEngineSample",
+        "preview": "FSME_preview"
     }
 ]
