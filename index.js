@@ -108,18 +108,72 @@ const projects = JSON.parse( await requestFile( "projects.json", "text" ) );
                 continue;
             }
 
-            const projectItem = LX.makeElement( "li", "project-item rounded-lg bg-secondary hover:bg-tertiary cursor-pointer overflow-hidden flex flex-col h-auto", "", listContainer );
+            const projectItem = LX.makeElement( "li", "relative project-item rounded-lg bg-secondary hover:bg-tertiary cursor-pointer overflow-hidden flex flex-col h-auto", "", listContainer );
+
             const projectPreview = LX.makeElement( "img", "rounded-t-lg bg-secondary hover:bg-tertiary w-full border-none", "", projectItem );
             projectPreview.src = project.preview ? `previews/${ project.preview }.png` : "previews/project_preview.png";
+
+            if( project.video )
+            {
+                const projectVideo = LX.makeElement( "video", "absolute rounded-t-lg w-full border-none pointer-events-none", "", projectItem );
+                projectVideo.setAttribute( "disablePictureInPicture", false );
+                projectVideo.setAttribute( "disableRemotePlayback", false );
+                projectVideo.setAttribute( "loop", true );
+                projectVideo.setAttribute( "async", true );
+                projectVideo.style.transition = "opacity 0.2s ease-out";
+                projectVideo.style.opacity = "0";
+                projectVideo.src = project.video;
+                projectVideo.volume = project.videoVolume ?? 0.4;
+            }
+            else if( project.iVideo )
+            {
+                const projectVideo = LX.makeElement( "iframe", "absolute rounded-t-lg w-full h-full border-none", "", projectItem );
+                projectVideo.src = project.iVideo;
+                projectVideo.setAttribute( "allow", "" );
+                projectVideo.style.transition = "opacity 0.2s ease-out";
+                projectVideo.style.opacity = "0";
+            }
+
             const projectDesc = LX.makeContainer( ["100%", "100%"], "flex flex-row rounded-b-lg gap-6 p-4 items-center", `
-                <div class="w-full">
-                    <div class="text-lg font-bold"><span style="font-family:var(--global-code-font);">${ project.name }</span></div>
-                    <div class="text-md font-light fg-secondary"><span style="font-family:var(--global-code-font);">${ project.description ?? "" }</div>
-                    <div class="text-sm font-light fg-secondary text-end"><span style="font-family:var(--global-code-font);">${ project.year ?? "" }</div>
+                <div class="flex flex-col gap-1 w-full">
+                    <div class="flex flex-row items-center">
+                        <div class="text-lg font-bold"><span>${ project.name }</span></div>
+                        <div class="text-sm font-light fg-secondary text-end ml-auto"><span>${ project.year ?? "" }</div>
+                    </div>
+                    <div class="text-md font-light fg-secondary"><span class="xline-clamp-1">${ project.description ?? "" }</div>
                 </div>`, projectItem );
 
+            if( project.content )
+            {
+                switch( project.content?.type )
+                {
+                    case "badge":
+                        const b = LX.badge( project.content?.html ?? "", "contrast border absolute top-0 right-0 m-2", { asElement: true } );
+                        projectItem.appendChild( b );
+                        break;
+                }
+            }
+
             projectItem.addEventListener( "click", ( e ) => {
+                console.log(e)
                 if( project.url ) window.open( project.url, "_blank" );
+            } );
+
+            projectItem.addEventListener( "mouseenter", ( e ) => {
+                if( !project.video && !project.iVideo ) return;
+                e.preventDefault();
+                const video = projectItem.querySelector( "video" ) ?? projectItem.querySelector( "iframe" );
+                video.style.opacity = "1";
+                if( project.video ) video.play();
+            } );
+
+            projectItem.addEventListener( "mouseleave", ( e ) => {
+                if( !project.video && !project.iVideo ) return;
+                e.preventDefault();
+                const video = projectItem.querySelector( "video" ) ?? projectItem.querySelector( "iframe" );
+                video.style.opacity = "0";
+                if( project.video ) video.pause();
+                else video.src = project.iVideo;
             } );
         }
     }
@@ -138,7 +192,7 @@ const projects = JSON.parse( await requestFile( "projects.json", "text" ) );
 
     {
         const webProjects = LX.makeContainer( [ "auto", "auto" ], "flex flex-col bg-primary border rounded-lg overflow-scroll" );
-        tabs.add( "Web", webProjects );
+        tabs.add( "Web", webProjects, { xselected: true } );
         listProjects( "web", webProjects );
     }
 }

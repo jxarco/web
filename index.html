@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.skypack.dev/lexgui/build/lexgui.css">
     <style>
       body * { font-family: var(--global-code-font) !important }
-      .project-item { grid-column-end: span 1; grid-row-end: span 1; aspect-ratio: 1 / 0.85 }
+      .project-item { grid-column-end: span 1; grid-row-end: span 1; aspect-ratio: 1 / 0.75 }
       @media (min-width: 0px) {
         .project-list { grid-template-columns:repeat(1, 1fr) }
       }
@@ -16,6 +16,7 @@
       }
       @media (min-width: 1180px) {
         .project-list { grid-template-columns:repeat(3, 1fr) }
+        .project-item { grid-column-end: span 1; grid-row-end: span 1; aspect-ratio: 1 / 0.85 }
       }
       @media (min-width: 1560px) {
         .project-list { grid-template-columns:repeat(4, 1fr) }
@@ -27,10 +28,15 @@
         .header-area > * { width: 100% !important }
         .contact-rect { align-items: center }
         :root, :root body { overflow-y: auto }
+        .project-item { grid-column-end: span 1; grid-row-end: span 1; aspect-ratio: 1 / 0.85 }
       }
       .hover\:text-underline:hover { text-decoration: underline }
+      /* Chrome / Edge specific */
+      video::-internal-media-controls-overlay-cast-button,
+      video::-internal-media-controls-overlay-play-button,
+      video::-internal-media-controls-overlay-enclosure { display: none !important }
     </style>
-    <link rel="icon" href="images/favicon.png">
+    <link rel="icon" href="favicon.png">
     <script type="importmap">
         {
           "imports": {

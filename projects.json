@@ -5,7 +5,8 @@
         "description": "3D SDF based sculpting in VR using wgpuEngine",
         "year": "2023-Present",
         "url": "https://github.com/upf-gti/rooms",
-        "preview": "rooms_preview"
+        "preview": "rooms_preview",
+        "video": "videos/rooms_kitchen_diorama_short.mp4"
     },
     {
         "name": "wgpuEngine",
@@ -21,7 +22,8 @@
         "description": "Native WebGPU Shadertoy-like using LexGUI.js",
         "year": "2025-Present",
         "url": "https://upf-gti.github.io/ShaderHub/",
-        "preview": "shaderhub_preview"
+        "preview": "shaderhub_preview",
+        "video": "videos/shaderhub.mp4"
     },
     {
         "name": "HDR4EU",
@@ -45,7 +47,12 @@
         "description": "Alien Souls-like, C++/Dx11 Custom Engine",
         "year": "2021",
         "url": "https://farfetchedworks.itch.io/eon-the-last-trial",
-        "preview": "eon_preview"
+        "preview": "eon_preview",
+        "video": "videos/ETLT_TRAILER_low.mp4",
+        "xcontent": {
+            "type": "badge",
+            "html": "See full trailer"
+        }
     },
     {
         "name": "Fruitality",
@@ -53,7 +60,8 @@
         "description": "Godot, 2D, GameJam",
         "year": "2024",
         "url": "https://jxarco.itch.io/fruitality",
-        "preview": "fruitality_preview"
+        "preview": "fruitality_preview",
+        "video": "videos/Fruitality.mp4"
     },
     {
         "name": "Rooting Route",
@@ -61,7 +69,8 @@
         "description": "Godot, 2D, 3D, GameJam",
         "year": "2023",
         "url": "https://pabloselin.itch.io/rooting-route",
-        "preview": "rooting_route_preview"
+        "preview": "rooting_route_preview",
+        "video": "videos/Rooting Route - Gameplay [GGJ 2023].mp4"
     },
     {
         "name": "Lockdown Reality",
@@ -80,19 +89,30 @@
         "preview": "mani_preview"
     },
     {
-        "name": "The Time Hallows",
-        "type": "game",
-        "description": "Custom Engine, 2D, Teaching",
-        "year": "2019",
-        "url": "https://jxarco.itch.io/the-time-hallows",
-        "preview": "TH_preview"
-    },
-    {
         "name": "Pinturesc",
         "type": "game",
         "description": "Web Custom version of Pinturillo",
         "year": "2020",
         "preview": "pinturesc_preview"
+    },
+    {
+        "name": "The Time Hallows",
+        "type": "game",
+        "description": "Custom Engine, 2D, Teaching",
+        "year": "2019",
+        "url": "https://jxarco.itch.io/the-time-hallows",
+        "preview": "TH_preview",
+        "video": "videos/The Time Hallows.mp4",
+        "videoVolume": 0.2
+    },
+    {
+        "name": "IN THE SKY: Battle of Britain",
+        "type": "game",
+        "description": "Aviation C++ OpenGL game",
+        "year": "2017",
+        "url": "https://www.youtube.com/watch?v=CFIizXzfcC0",
+        "preview": "tje_preview",
+        "iVideo": "https://www.youtube.com/embed/CFIizXzfcC0?si=pBv-hWfPOVVY7auR&controls=0"
     },
     {
         "name": "LexGUI.js",
