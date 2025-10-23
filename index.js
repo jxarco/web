@@ -128,7 +128,7 @@ const projects = JSON.parse( await requestFile( "data/projects.json", "text" ) )
     LX.makeContainer( [ "auto", "auto" ], "flex flex-col w-full md:w-1/2 gap-2 px-10 py-8", `
     <h2 class="">Soft Skills</h2>
     <div class="grid gap-4" style="grid-template-columns:repeat(2, 1fr)">
-        <span class="fg-secondary">Teamword & Coooperation</span>
+        <span class="fg-secondary">Teamwork & Cooperation</span>
         <span class="fg-secondary">Problem Solving</span>
         <span class="fg-secondary">Organization</span>
         <span class="fg-secondary">Leadership</span>
