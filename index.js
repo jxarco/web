@@ -37,7 +37,7 @@ function requestFile( url, dataType, nocache ) {
 
 const area = await LX.init( { layoutMode: "document", rootClass: "wrapper" } );
 const starterTheme = LX.getTheme();
-const projects = JSON.parse( await requestFile( "projects.json", "text" ) );
+const projects = JSON.parse( await requestFile( "data/projects.json", "text" ) );
 
 // Menubar
 {
@@ -75,7 +75,7 @@ const projects = JSON.parse( await requestFile( "projects.json", "text" ) );
         or computer graphics.</p>
     `, header );
 
-    const headerRight = LX.makeContainer( [ null, "auto" ], "contact-rect flex flex-col gap-2 px-10 py-8 justify-end items-end", `
+    const headerRight = LX.makeContainer( [ null, "auto" ], "contact-rect flex flex-col gap-2 px-10 py-8 justify-center items-end", `
     <p class="fg-primary text-end">
     alexroco.30@gmail.com<br>
     +34 634707943<br>
@@ -88,11 +88,71 @@ const projects = JSON.parse( await requestFile( "projects.json", "text" ) );
     <a class="fg-secondary decoration-none hover:text-underline" href="https://www.linkedin.com/in/alejandro-roco/">linkedin.com/alejandro-roco</a><br>
     <a class="fg-secondary decoration-none hover:text-underline" href="https://www.youtube.com/watch?v=FcAQGF1KXts">youtube.com/coding-reel</a><br>
     </p>`, header );
+
+    const cvDownloadButton = LX.makeContainer( [ "128px", "auto" ], "flex mt-2 p-4 cursor-pointer hover:bg-secondary border text-center justify-center", `
+        <div class="flex flex-row gap-3 items-center">${ LX.makeIcon( "FilePdf", { svgClass: "xl fg-primary" } ).innerHTML }<span class="fg-primary">CV</span></div>
+    `, headerLeft );
+
+    cvDownloadButton.addEventListener( "click", ( e ) => {
+        window.open( "data/CV_ARodriguez_2025.pdf", "_blank" );
+    } );
+}
+
+// Skills
+{
+    const skillsContainer = LX.makeContainer( [ null, "auto" ], "border-top border-bottom", "", area );
+    const title = LX.makeContainer( [ "auto", "auto" ], "fg-primary px-8 pt-4 font-bold font-code text-xl", "Skills", skillsContainer );
+    const innerCont = LX.makeContainer( [ "100%", "100%" ], "md:flex flex-row", "", skillsContainer );
+
+    LX.makeContainer( [ "auto", "auto" ], "flex flex-col w-full md:w-1/2 gap-2 px-10 py-8", `
+        <h3 class="mb-2">Hard Skills</h3>
+        <div class="grid gap-4" style="grid-template-columns:repeat(2, 1fr)">
+            <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-cplusplus-plain"></span><span class="fg-secondary">C++</span></div>
+            <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-javascript-plain"></span><span class="fg-secondary">JavaScript</span></div>
+            <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-c-plain"></span><span class="fg-secondary">C</span></div>
+            <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-python-plain"></span><span class="fg-secondary">Python</span></div>
+            <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-html5-plain"></span><span class="fg-secondary">HTML5 - CSS</span></div>
+            <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-visualstudio-plain"></span><span class="fg-secondary">Visual Studio</span></div>
+            <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-godot-plain"></span><span class="fg-secondary">Godot - GDScript</span></div>
+            <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-unrealengine-plain"></span><span class="fg-secondary">Unreal Engine</span></div>
+            <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-lua-plain"></span><span class="fg-secondary">LUA</span></div>
+            <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-webgpu-plain"></span><span class="fg-secondary">WebGL - WebGPU</span></div>
+            <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-opengl-plain"></span><span class="fg-secondary">OpenGL - Dx11</span></div>
+            <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-appwrite-plain"></span><span class="fg-secondary">Appwrite</span></div>
+            <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-threejs-original"></span><span class="fg-secondary">Three.JS</span></div>
+            <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-github-plain"></span><span class="fg-secondary">Github</span></div>
+            <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-trello-plain"></span><span class="fg-secondary">HacknPlan, Trello</span></div>
+        </div>
+    `, innerCont );
+
+    LX.makeContainer( [ "auto", "auto" ], "flex flex-col w-full md:w-1/2 gap-2 px-10 py-8", `
+    <h2 class="">Soft Skills</h2>
+    <div class="grid gap-4" style="grid-template-columns:repeat(2, 1fr)">
+        <span class="fg-secondary">Teamword & Coooperation</span>
+        <span class="fg-secondary">Problem Solving</span>
+        <span class="fg-secondary">Organization</span>
+        <span class="fg-secondary">Leadership</span>
+        <span class="fg-secondary">Adaptation</span>
+        <span class="fg-secondary">Fast Learner</span>
+    </div>`, innerCont );
+}
+
+// Publications
+{
+    const pubContainer = LX.makeContainer( [ null, "auto" ], "border-top border-bottom", "", area );
+    const title = LX.makeContainer( [ "auto", "auto" ], "fg-primary px-8 pt-4 font-bold font-code text-xl", "Publications", pubContainer );
+
+    LX.makeContainer( [ "auto", "auto" ], "flex flex-col px-10 py-8", `
+        <div class="flex flex-col gap-1">
+        <span class="fg-secondary">Alejandro Rodríguez, Pablo Luis García, Juan Sebastián Marquerie, Ricardo Marques, and Josep Blat. 2025.</span>
+        <span class="fg-primary font-bold">A Cross-Platform, WebGPU-Based 3D Engine for Real-Time Rendering and XR Applications. In Proceedings of the 30th International Conference on 3D Web Technology (Web3D '25).</span>
+        <a class="text-md fg-secondary decoration-none hover:text-underline" href="https://dl.acm.org/doi/10.1145/3746237.3746305">https://dl.acm.org/doi/10.1145/3746237.3746305</a>
+        </div>
+    `, pubContainer );
 }
 
 // Content
 {
-    
     LX.makeContainer( [ "auto", "auto" ], "fg-primary px-8 pt-4 font-bold font-code text-xl", "Projects", area );
 
     const tabs = area.addTabs( { parentClass: "p-4", sizes: [ "auto", "auto" ], contentClass: "p-6 pt-0" } );
