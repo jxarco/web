@@ -82,11 +82,15 @@ const projects = JSON.parse( await requestFile( "data/projects.json", "text" ) )
     08150, Barcelona<br>
     </p>
     <p class="text-md text-end">
-    <span class="fg-tertiary">Other links:</span><br>
-    <a class="fg-secondary decoration-none hover:text-underline" href="https://github.com/jxarco/">github.com/jxarco</a><br>
-    <a class="fg-secondary decoration-none hover:text-underline" href="https://jxarco.itch.io/">jxarco.itch.io</a><br>
-    <a class="fg-secondary decoration-none hover:text-underline" href="https://www.linkedin.com/in/alejandro-roco/">linkedin.com/alejandro-roco</a><br>
-    <a class="fg-secondary decoration-none hover:text-underline" href="https://www.youtube.com/watch?v=FcAQGF1KXts">youtube.com/coding-reel</a><br>
+    <div class="flex flex-col gap-1 text-end">
+        <span class="fg-tertiary">Other links:</span>
+        <a class="fg-secondary decoration-none hover:text-underline" href="https://jxarco.itch.io/">jxarco.itch.io</a>
+        <a class="fg-secondary decoration-none hover:text-underline" href="https://www.youtube.com/watch?v=FcAQGF1KXts">youtube.com/coding-reel</a>
+        <div class="flex flex-row gap-2 mt-2 justify-end">
+            <a class="fg-secondary decoration-none hover:fg-primary" href="https://github.com/jxarco/"><span style="font-size:1.5rem" class="devicon-github-plain cursor-pointer"></span></a>
+            <a class="fg-secondary decoration-none hover:fg-primary" href="https://www.linkedin.com/in/alejandro-roco/"><span style="font-size:1.5rem" class="devicon-linkedin-plain cursor-pointer"></span></a>
+        </div>
+    </div>
     </p>`, header );
 
     const cvDownloadButton = LX.makeContainer( [ "128px", "auto" ], "flex mt-2 p-4 cursor-pointer hover:bg-secondary border text-center justify-center", `
