@@ -64,15 +64,13 @@ const projects = JSON.parse( await requestFile( "data/projects.json", "text" ) )
 
 // Header
 {
-    const header = LX.makeContainer( [ null, "auto" ], "header-area flex flex-row border-top border-bottom", "", area );
+    const header = LX.makeContainer( [ null, "auto" ], "header-area flex flex-row border-top", "", area );
 
     const headerLeft = LX.makeContainer( [ null, "auto" ], "flex flex-col gap-2 px-10 py-8", `
         <p class="fg-secondary" style="max-width:32rem">Software developer.</p>
         <h1 class="">Alex Rodríguez</h1>
         <p class="leading-normal fg-secondary" style="max-width:48rem"> +8 years as a research and development engineer at Pompeu Fabra
-        University, teaching roles in Computer Graphics and Game Development. Passionate about both coding and
-        playing games. I'm eager to bring my skills to new challenges in software development, interactive applications,
-        or computer graphics.</p>
+        University, teaching roles in Computer Graphics and Game Development. Passionate about videogames, graphics and web front-end :)</p>
     `, header );
 
     const headerRight = LX.makeContainer( [ null, "auto" ], "contact-rect flex flex-col gap-2 px-10 py-8 justify-center items-end", `
@@ -104,16 +102,25 @@ const projects = JSON.parse( await requestFile( "data/projects.json", "text" ) )
 
 // Skills
 {
-    const skillsContainer = LX.makeContainer( [ null, "auto" ], "border-top border-bottom", "", area );
-    const title = LX.makeContainer( [ "auto", "auto" ], "fg-primary px-8 pt-4 font-bold font-code text-xl", "Skills", skillsContainer );
+    const skillsContainer = LX.makeContainer( [ null, "auto" ], "border-top", "", area );
+    const title = LX.makeContainer( [ "auto", "auto" ], "fg-primary px-8 pt-6 font-bold font-code text-xl", "Skills", skillsContainer );
     const innerCont = LX.makeContainer( [ "100%", "100%" ], "md:flex flex-row", "", skillsContainer );
 
-    LX.makeContainer( [ "auto", "auto" ], "flex flex-col w-full md:w-1/2 gap-2 px-10 py-8", `
-        <h3 class="mb-2">Hard Skills</h3>
+    LX.makeContainer( [ "auto", "auto" ], "flex flex-col w-full md:w-1/2 gap-2 px-10 py-8 items-center text-center", `
+    <h3 class="mb-4">Languages</h3>
+    <div class="flex flex-col gap-4">
+        <span class="fg-secondary">Spanish: Native</span>
+        <span class="fg-secondary">Catalan: Native</span>
+        <span class="fg-secondary">English: Professional Proficiency</span>
+    </div>`, innerCont );
+
+        LX.makeContainer( [ "auto", "auto" ], "flex flex-col w-full md:w-1/2 gap-2 px-10 py-8 items-center text-center", `
+        <h3 class="mb-4">Hard Skills</h3>
         <div class="grid gap-4" style="grid-template-columns:repeat(2, 1fr)">
             <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-cplusplus-plain"></span><span class="fg-secondary">C++</span></div>
             <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-javascript-plain"></span><span class="fg-secondary">JavaScript</span></div>
             <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-c-plain"></span><span class="fg-secondary">C</span></div>
+            <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-typescript-plain"></span><span class="fg-secondary">TypeScript</span></div>
             <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-python-plain"></span><span class="fg-secondary">Python</span></div>
             <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-html5-plain"></span><span class="fg-secondary">HTML5 - CSS</span></div>
             <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-visualstudio-plain"></span><span class="fg-secondary">Visual Studio</span></div>
@@ -122,44 +129,50 @@ const projects = JSON.parse( await requestFile( "data/projects.json", "text" ) )
             <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-lua-plain"></span><span class="fg-secondary">LUA</span></div>
             <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-webgpu-plain"></span><span class="fg-secondary">WebGL - WebGPU</span></div>
             <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-opengl-plain"></span><span class="fg-secondary">OpenGL - Dx11</span></div>
-            <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-appwrite-plain"></span><span class="fg-secondary">Appwrite</span></div>
+            <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-appwrite-plain"></span><span class="fg-secondary">Appwrite - Firebase</span></div>
             <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-threejs-original"></span><span class="fg-secondary">Three.JS</span></div>
             <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-github-plain"></span><span class="fg-secondary">Github</span></div>
-            <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-trello-plain"></span><span class="fg-secondary">HacknPlan, Trello</span></div>
+            <div class="flex flex-row gap-3 items-center"><span style="font-size:1.75rem" class="devicon-trello-plain"></span><span class="fg-secondary">HacknPlan - Trello</span></div>
         </div>
     `, innerCont );
 
-    LX.makeContainer( [ "auto", "auto" ], "flex flex-col w-full md:w-1/2 gap-2 px-10 py-8", `
-    <h2 class="">Soft Skills</h2>
-    <div class="grid gap-4" style="grid-template-columns:repeat(2, 1fr)">
+    LX.makeContainer( [ "auto", "auto" ], "flex flex-col w-full md:w-1/2 gap-2 px-10 py-8 items-center text-center", `
+    <h3 class="mb-4">Soft Skills</h3>
+    <div class="flex flex-col gap-4">
         <span class="fg-secondary">Teamwork & Cooperation</span>
         <span class="fg-secondary">Problem Solving</span>
         <span class="fg-secondary">Organization</span>
         <span class="fg-secondary">Leadership</span>
         <span class="fg-secondary">Adaptation</span>
-        <span class="fg-secondary">Fast Learner</span>
+        <span class="fg-secondary">Fast Learning</span>
     </div>`, innerCont );
 }
 
 // Publications
 {
     const pubContainer = LX.makeContainer( [ null, "auto" ], "border-top border-bottom", "", area );
-    const title = LX.makeContainer( [ "auto", "auto" ], "fg-primary px-8 pt-4 font-bold font-code text-xl", "Publications", pubContainer );
+    const title = LX.makeContainer( [ "auto", "auto" ], "fg-primary px-8 pt-6 font-bold font-code text-xl", "Publications", pubContainer );
 
-    LX.makeContainer( [ "auto", "auto" ], "flex flex-col px-10 py-8", `
+    LX.makeContainer( [ "auto", "auto" ], "flex flex-col px-10 py-8 gap-4", `
         <div class="flex flex-col gap-1">
-        <span class="fg-secondary">Alejandro Rodríguez, Pablo Luis García, Juan Sebastián Marquerie, Ricardo Marques, and Josep Blat. 2025.</span>
-        <span class="fg-primary font-bold">A Cross-Platform, WebGPU-Based 3D Engine for Real-Time Rendering and XR Applications. In Proceedings of the 30th International Conference on 3D Web Technology (Web3D '25).</span>
-        <a class="text-md fg-secondary decoration-none hover:text-underline" href="https://dl.acm.org/doi/10.1145/3746237.3746305">https://dl.acm.org/doi/10.1145/3746237.3746305</a>
+            <span class="fg-tertiary"><span class="fg-secondary font-semibold">Alejandro Rodríguez</span>, Pablo Luis García, Juan Sebastián Marquerie, Ricardo Marques, and Josep Blat. 2025.</span>
+            <span class="fg-primary font-bold">A Cross-Platform, WebGPU-Based 3D Engine for Real-Time Rendering and XR Applications. In Proceedings of the 30th International Conference on 3D Web Technology (Web3D '25).</span>
+            <a class="text-md fg-secondary decoration-none hover:text-underline" href="https://dl.acm.org/doi/10.1145/3746237.3746305">https://dl.acm.org/doi/10.1145/3746237.3746305</a>
+        </div>
+        <div class="flex flex-col gap-1">
+            <span class="fg-tertiary">Boris Bellalta, Miguel Casasnovas, Ferran Maura, <span class="fg-secondary font-semibold">Alejandro Rodríguez</span>, Juan S. Marquerie, Pablo L. García, Francesc Wilhelmi, Josep Blat. 2025.</span>
+            <span class="fg-primary font-bold">Understanding the Wi-Fi and VR streaming interplay: A comprehensible simulation and experimental study. Journal of Network and Computer Applications.</span>
+            <a class="text-md fg-secondary decoration-none hover:text-underline" href="https://doi.org/10.1016/j.jnca.2025.104391">https://doi.org/10.1016/j.jnca.2025.104391</a>
         </div>
     `, pubContainer );
 }
 
 // Content
 {
-    LX.makeContainer( [ "auto", "auto" ], "fg-primary px-8 pt-4 font-bold font-code text-xl", "Projects", area );
+    LX.makeContainer( [ "auto", "auto" ], "fg-primary px-8 pt-6 font-bold font-code text-xl", "Projects", area );
 
     const tabs = area.addTabs( { parentClass: "p-4", sizes: [ "auto", "auto" ], contentClass: "p-6 pt-0" } );
+    console.log(tabs)
 
     const listProjects = ( type, container ) => {
 
@@ -259,6 +272,30 @@ const projects = JSON.parse( await requestFile( "data/projects.json", "text" ) )
         tabs.add( "Web", webProjects, { xselected: true } );
         listProjects( "web", webProjects );
     }
+}
+
+// Education
+{
+    const edContainer = LX.makeContainer( [ null, "auto" ], "border-top", "", area.root);
+    const title = LX.makeContainer( [ "auto", "auto" ], "fg-primary px-8 pt-6 font-bold font-code text-xl", "Education", edContainer );
+
+    LX.makeContainer( [ "auto", "auto" ], "flex flex-col px-10 py-8 gap-4", `
+        <div class="flex flex-col gap-1">
+            <span class="fg-tertiary">Barcelona School of Management (Pompeu Fabra University).</span>
+            <span class="fg-primary font-bold"> M.S. degree in Design and Creation of Videogames.</span>
+            <span class="text-md fg-secondary">Barcelona, Spain, 2020-2021</span>
+        </div>
+        <div class="flex flex-col gap-1">
+            <span class="fg-tertiary">Pompeu Fabra University.</span>
+            <span class="fg-primary font-bold">B.S. degree in Computer Science.</span>
+            <span class="text-md fg-secondary">Barcelona, Spain, 2014–2018</span>
+        </div>
+        <div class="flex flex-col gap-1">
+            <span class="fg-tertiary">Cambridge School.</span>
+            <span class="fg-primary font-bold"> FCE (First Certificate in English.</span>
+            <span class="text-md fg-secondary">Barcelona, Spain, 2015</span>
+        </div>
+    `, edContainer );
 }
 
 // Footer
